@@ -1,4 +1,4 @@
-module SparseVector
+module SparseVector exposing
     ( SparseVector
     , empty
     , isEmpty
@@ -7,7 +7,7 @@ module SparseVector
     , magnitude
     , dot
     , cosineSimilarity
-    ) where
+    )
 
 {-| SparseVector is an n-dimension sparse vector.
 

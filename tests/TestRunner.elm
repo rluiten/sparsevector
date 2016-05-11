@@ -1,16 +1,13 @@
-module TestRunner where
+module ProgramTestRunner exposing (..)
 
 import String
-import Graphics.Element exposing (Element)
-
 import ElmTest exposing (..)
 
 import SparseVectorTests
 
 
-main : Element
 main =
-    elementRunner
+    runSuite
       ( suite "Element Test Runner Tests"
         [ SparseVectorTests.tests
         ]

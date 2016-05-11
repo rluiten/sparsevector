@@ -1,4 +1,4 @@
-module SparseVectorTests where
+module SparseVectorTests exposing (..)
 
 import ElmTest exposing (..)
 
