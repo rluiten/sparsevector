@@ -9,6 +9,9 @@ Its functionally may increase over time as needed.
 You are welcome to contribute additional functionality, it is highly
 desirable to have at least a test for new functions.
 
+Using elm-format now.
+
+
 ## Testing
 
 This uses elm-test for testing so install it if you dont have it.
@@ -19,4 +22,4 @@ To run Tests
 
 * elm-test
 
-Copyright (c) 2016 Robin Luiten
+Copyright (c) 2017 Robin Luiten
