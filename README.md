@@ -22,4 +22,4 @@ To run Tests
 
 * elm-test
 
-Copyright (c) 2017 Robin Luiten
+Copyright (c) 2015 Robin Luiten

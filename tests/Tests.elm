@@ -1,7 +1,7 @@
-module Tests exposing (..)
+module Tests exposing (all)
 
-import Test exposing (..)
 import SparseVectorTests
+import Test exposing (..)
 
 
 all : Test

@@ -1,14 +1,13 @@
-module SparseVector
-    exposing
-        ( SparseVector
-        , empty
-        , isEmpty
-        , insert
-        , insertList
-        , magnitude
-        , dot
-        , cosineSimilarity
-        )
+module SparseVector exposing
+    ( SparseVector
+    , empty
+    , isEmpty
+    , insert
+    , insertList
+    , magnitude
+    , dot
+    , cosineSimilarity
+    )
 
 {-| SparseVector is an n-dimension sparse vector.
 
@@ -29,7 +28,7 @@ cosineSimilarity are both using the same dimension vector.
 @docs dot
 @docs cosineSimilarity
 
-Copyright (c) 2017 Robin Luiten
+Copyright (c) 2015 Robin Luiten
 
 -}
 
@@ -100,12 +99,12 @@ dot vec1 vec2 =
         d2 =
             Dict.filter (\k v -> Set.member k common) vec2
     in
-        List.sum <|
-            List.map2 (\v1 v2 -> v1 * v2) (Dict.values d1) (Dict.values d2)
+    List.sum <|
+        List.map2 (\v1 v2 -> v1 * v2) (Dict.values d1) (Dict.values d2)
 
 
 {-| Calculates the cosine similarity between vectors.
 -}
 cosineSimilarity : SparseVector -> SparseVector -> Float
 cosineSimilarity vec1 vec2 =
-    (dot vec1 vec2) / ((magnitude vec1) * (magnitude vec2))
+    dot vec1 vec2 / (magnitude vec1 * magnitude vec2)
