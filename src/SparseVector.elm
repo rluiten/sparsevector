@@ -80,7 +80,7 @@ Sqrt of Sum of Squares of each dimension value.
 -}
 magnitude : SparseVector -> Float
 magnitude svector =
-    sqrt (List.sum (List.map (\x -> x * x) (Dict.values svector)))
+    sqrt (Dict.foldl (\_ x acc -> x * x + acc) 0 svector)
 
 
 {-| Calculates the dot product between vectors.
