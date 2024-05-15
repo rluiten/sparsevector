@@ -14,6 +14,7 @@ tests =
         ]
 
 
+magnitude1 : () -> Test
 magnitude1 _ =
     let
         vec =
@@ -23,6 +24,7 @@ magnitude1 _ =
         \() -> SparseVector.magnitude vec |> Expect.within (Absolute 0.00001) (sqrt 77)
 
 
+dotProduct1 : () -> Test
 dotProduct1 _ =
     let
         vec1 =
@@ -35,6 +37,7 @@ dotProduct1 _ =
         \() -> Expect.equal 3 (SparseVector.dot vec1 vec2)
 
 
+cosineSimilarity1 : () -> Test
 cosineSimilarity1 _ =
     let
         vec1 =
