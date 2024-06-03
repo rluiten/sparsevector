@@ -3,7 +3,7 @@
     "name": "rluiten/sparsevector",
     "summary": "A simple sparse vector implementation",
     "license": "BSD-3-Clause",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "exposed-modules": [
         "SparseVector"
     ],
