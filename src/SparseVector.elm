@@ -80,27 +80,20 @@ Sqrt of Sum of Squares of each dimension value.
 -}
 magnitude : SparseVector -> Float
 magnitude svector =
-    sqrt (List.sum (List.map (\x -> x * x) (Dict.values svector)))
+    sqrt (Dict.foldl (\_ x acc -> x * x + acc) 0 svector)
 
 
 {-| Calculates the dot product between vectors.
 -}
 dot : SparseVector -> SparseVector -> Float
 dot vec1 vec2 =
-    let
-        common =
-            Set.intersect
-                (Set.fromList (Dict.keys vec1))
-                (Set.fromList (Dict.keys vec2))
-
-        d1 =
-            Dict.filter (\k v -> Set.member k common) vec1
-
-        d2 =
-            Dict.filter (\k v -> Set.member k common) vec2
-    in
-    List.sum <|
-        List.map2 (\v1 v2 -> v1 * v2) (Dict.values d1) (Dict.values d2)
+    Dict.merge
+        (\_ _ acc -> acc)
+        (\_ v1 v2 acc -> v1 * v2 + acc)
+        (\_ _ acc -> acc)
+        vec1
+        vec2
+        0
 
 
 {-| Calculates the cosine similarity between vectors.
