@@ -33,7 +33,6 @@ Copyright (c) 2015 Robin Luiten
 -}
 
 import Dict exposing (Dict)
-import Set
 
 
 {-| SparseVector type alias
